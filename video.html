@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #play_video{
+            border:1px solid red;
+            display: block;
+            margin: auto;
+        }
+        body{
+            background-image: url("https://scontent.fixr3-2.fna.fbcdn.net/v/t39.30808-6/284076139_5724882694231069_1378818038829231731_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=x8yovERrPDcAX9bHEWd&_nc_ht=scontent.fixr3-2.fna&oh=00_AT9DbHX908i4FLGlRn38PvZ-sPKqPJJGoSonmVOc8oGG7A&oe=62F7045E");
+        }
+        
+    </style>
+</head>
+<body onload="playVideo()">
+     <!-- go to youtube play any video and click share option then embedd then copy html tag and paste it inside it. -->
+    <h1>Play Video</h1>
+    <iframe width="560" 
+    id="play_video"
+    height="315" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
+
+</body>
+</html>
+<script>
+
+    let playVideo=()=>{
+        let video=JSON.parse( localStorage.getItem("video"))||[];
+        console.log(video)
+        //let id=videoId;
+        let play_video=document.getElementById("play_video");
+        
+
+        play_video.src=`https://www.youtube.com/embed/${video}`
+        
+    }
+
+
+</script>
